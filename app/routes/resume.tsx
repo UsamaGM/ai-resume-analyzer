@@ -44,7 +44,6 @@ export default function Resume() {
       setImageUrl(imageUrl);
 
       setFeedback(data.feedback);
-      console.log(data);
     }
 
     loadResume();
@@ -62,9 +61,9 @@ export default function Resume() {
       </nav>
 
       <div className="flex flex-row w-full max-lg:flex-col-reverse">
-        <section className="feedback-section bg-[url('/images/bg-small.svg')] bg-cover min-h-[100vh] sticky top-0 items-center justify-center">
+        <section className="feedback-section bg-[url('/images/bg-small.svg')] bg-cover h-fit sticky top-0 items-center justify-center">
           {imageUrl && resumeUrl && (
-            <div className=" animate-in fade-in duration-1000 gradient-border max-sm:m-0 h-[90%] max-2xl:size-fit">
+            <div className="animate-in fade-in duration-1000 gradient-border max-sm:m-0 max-sm:h-[90%] max-2xl:size-fit">
               <a href={resumeUrl} target="_blank">
                 <img
                   src={imageUrl}

@@ -25,8 +25,6 @@ function Category({ title, score }: { title: string; score: number }) {
 }
 
 export default function Summary({ feedback }: { feedback: Feedback }) {
-  console.log(feedback);
-
   return (
     <div className="bg-white rounded-2xl shadow-md w-full">
       <div className="flex flex-row items-center p-4 gap-8">

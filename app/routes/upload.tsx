@@ -64,7 +64,6 @@ export default function Upload() {
       uploadedFile.path,
       prepareInstructions({ jobTitle, jobDescription }),
     );
-    console.log(prepareInstructions({ jobTitle, jobDescription }));
 
     if (!feedback) return setStatusText("Error: Failed to analyze resume");
     const feedbackText =
