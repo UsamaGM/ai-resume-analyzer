@@ -74,7 +74,8 @@ export default function Upload() {
     data.feedback = JSON.parse(feedbackText);
     await kv.set(`resume-${uuid}`, JSON.stringify(data));
     setStatusText("Analysis complete, redirecting...");
-    console.log(JSON.stringify(data), null, 2);
+
+    navigate(`/resume/${uuid}`);
   }
 
   function handleSubmit(e: FormEvent<HTMLFormElement>) {
