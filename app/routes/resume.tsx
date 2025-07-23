@@ -44,6 +44,7 @@ export default function Resume() {
       setImageUrl(imageUrl);
 
       setFeedback(data.feedback);
+      console.log(data);
     }
 
     loadResume();
@@ -52,7 +53,7 @@ export default function Resume() {
   return (
     <main className="!pt-0">
       <nav className="resume-nav">
-        <Link to="/home" className="back-button">
+        <Link to="/" className="back-button">
           <img src="/icons/back.svg" alt="logo" className="size-2.5" />
           <span className="text-gray-800 text-sm font-semibold">
             Back to homepage
@@ -61,7 +62,7 @@ export default function Resume() {
       </nav>
 
       <div className="flex flex-row w-full max-lg:flex-col-reverse">
-        <section className="feedback-section bg-[url('/images/bg-small.svg')] bg-cover h-[100vh] sticky top-0 items-center justify-center">
+        <section className="feedback-section bg-[url('/images/bg-small.svg')] bg-cover min-h-[100vh] sticky top-0 items-center justify-center">
           {imageUrl && resumeUrl && (
             <div className=" animate-in fade-in duration-1000 gradient-border max-sm:m-0 h-[90%] max-2xl:size-fit">
               <a href={resumeUrl} target="_blank">
@@ -78,7 +79,7 @@ export default function Resume() {
         <section className="feedback-section">
           <h2 className="text-4xl text-black font-bold">Resume Review</h2>
           {feedback ? (
-            <div className="flex felx-col gap-8 animate-in fade-in duration-1000">
+            <div className="flex flex-col gap-8 animate-in fade-in duration-1000">
               <Summary feedback={feedback} />
               <ATS
                 score={feedback.ATS.score || 0}
